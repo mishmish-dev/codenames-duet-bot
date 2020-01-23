@@ -1,0 +1,7 @@
+from codenames.handlers.special_types.deep_linked import DeepLinkedCallbackQueryHandler
+from codenames.handlers.special_types.deep_linked import DeepLinkedStartCommandHandler
+
+from codenames.handlers.special_types.localized import LocalizedCallbackQueryHandler
+from codenames.handlers.special_types.localized import LocalizedCommandHandler
+from codenames.handlers.special_types.localized import LocalizedInlineQueryHandler
+from codenames.handlers.special_types.localized import LocalizedMessageHandler
