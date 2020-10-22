@@ -103,5 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# sqlite db files
+*.db
+
 # VSCode config
 .vscode/
