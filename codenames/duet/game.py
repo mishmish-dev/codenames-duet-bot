@@ -26,11 +26,14 @@ class GameMixin(BoardMixin):
 
         return True
 
-    def make_guess(self, guess: str, team: Team) -> Optional[Identity]:
-        if not (
+    def is_correct_phase_to_make_guess(self, team: Team) -> bool:
+        return (
             (self.phase in (Phase.GUESS_CANNOT_SKIP, Phase.GUESS) and self.playing_team == team)
             or self.phase == Phase.SUDDEN_DEATH
-        ):
+        )
+
+    def make_guess(self, guess: str, team: Team) -> Optional[Identity]:
+        if not self.is_correct_phase_to_make_guess(team):
             return None
 
         identity = self.guess_identity(guess, team)

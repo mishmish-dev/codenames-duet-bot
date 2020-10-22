@@ -148,6 +148,16 @@ PLAYER_GIVES_CLUE = {
     ENGLISH: "{nickname} gives a clue:\n{clue} {agent_count}."
 }
 
+NOT_YOUR_TURN_TO_GIVE_CLUE = {
+    RUSSIAN: "Сейчас не очередь вашей команды давать подсказку.",
+    ENGLISH: "It's not your side's turn to give clue now."
+}
+
+NOT_GIVING_CLUE_WAIT_FOR_OTHER_TEAM = {
+    RUSSIAN: "С другой стороны пока никого нет. Подсказка не дана",
+    ENGLISH: "There is no one on the other side yet. Clue not given."
+}
+
 
 ## make guess
 
@@ -179,6 +189,21 @@ BUMPED_INTO_ASSASSIN = {
 SUDDEN_DEATH = {
     RUSSIAN: "Упс! Вы исчерпали все свои ходы. Игроки вне очереди пытаются дооткрыть своих агентов.",
     ENGLISH: "Oops! You have no turns left. Now players try out of turn to reveal their agents."
+}
+
+ALL_AGENTS_FROM_ONE_TEAM_FOUND = {
+    RUSSIAN: "Ура! Все агенты с этой стороны открыты. Ход завершён.",
+    ENGLISH: "Hooray! All agents found for this side. End of turn."
+}
+
+NOT_YOUR_TURN_TO_MAKE_GUESS = {
+    RUSSIAN: "Сейчас не очередь вашей команды отгадывать агента.",
+    ENGLISH: "It's not your side's turn to make guess now."
+}
+
+UNKNOWN_CODENAME = {
+    RUSSIAN: "Кодовое имя не распознано. Попробуйте дать догадку снова.",
+    ENGLISH: "Couldn't identify codename. Try make guess again."
 }
 
 
