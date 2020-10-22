@@ -154,7 +154,7 @@ NOT_YOUR_TURN_TO_GIVE_CLUE = {
 }
 
 NOT_GIVING_CLUE_WAIT_FOR_OTHER_TEAM = {
-    RUSSIAN: "С другой стороны пока никого нет. Подсказка не дана",
+    RUSSIAN: "С другой стороны пока никого нет. Подсказка не дана.",
     ENGLISH: "There is no one on the other side yet. Clue not given."
 }
 
