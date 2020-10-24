@@ -1,8 +1,9 @@
 from telegram import Update
-from telegram.ext import CallbackContext, CommandHandler
+from telegram.ext import CallbackContext
 
 from codenames.database import create_session_context
 from codenames.database.models import DuetPlayer
+from codenames.handlers.special_types import LocalizedCommandHandler
 
 
 def end_turn(update: Update, context: CallbackContext) -> None:
@@ -29,4 +30,4 @@ def end_turn(update: Update, context: CallbackContext) -> None:
             update.effective_user.send_message(context.language.t.YOU_ARE_NOT_IN_GAME)
 
 
-end_turn_handler = CommandHandler("end_turn", end_turn)
+end_turn_handler = LocalizedCommandHandler("end_turn", end_turn)
