@@ -3,7 +3,7 @@ from codenames.handlers.manage_game import change_game_settings_handler, create_
 from codenames.handlers.manage_game import join_game_handler, leave_game_handler
 from codenames.handlers.manage_game import invite_handler, replay_handler
 
-from codenames.handlers.play import give_clue_handler, make_guess_handler, end_turn_handler
+from codenames.handlers.play import give_clue_handler, make_guess_handler, end_turn_handler, clue_history_handler
 
 from codenames.handlers.manage_settings import settings_handler, nickname_handler
 from codenames.handlers.manage_settings import language_command_handler, change_language_handler
@@ -34,6 +34,7 @@ HANDLERS = [
     start_handler,
 
     end_turn_handler,
+    clue_history_handler,
 
     audio_handler,
     sticker_handler,

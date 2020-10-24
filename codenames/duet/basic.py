@@ -13,6 +13,12 @@ class Team(Enum):
 
         return Team.FIRST
 
+    def icon(self) -> str:
+        if self == Team.FIRST:
+            return "☝🏻"
+
+        return "✌🏻"
+
 
 class Identity(Enum):
     AGENT = auto()

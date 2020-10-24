@@ -7,6 +7,7 @@ from codenames.duet.basic import Identity, IdentityPair, Team
 
 BOARD_SIZE = 25
 MAX_GUESS_COUNT = 26
+MAX_CLUE_COUNT = 11
 AGENT_COUNT_FOR_ONE_TEAM = 9
 
 IDENTITY_PAIRS = (
@@ -29,6 +30,10 @@ class BoardMixin:
     def get_guess_history(self) -> Iterator[Tuple[int, Team, Identity]]:
         for position, team in zip(self.guess_positions, self.guess_teams):
             yield position, team, self.get_identity(position, team)
+
+    def get_clue_history(self) -> Iterator[Tuple[str, Team]]:
+        for clue, team in zip(self.clues, self.clue_teams):
+            yield clue, team
 
     def clear_guess_history(self) -> None:
         self.guess_positions.clear()

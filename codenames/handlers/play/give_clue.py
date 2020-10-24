@@ -2,15 +2,21 @@ from telegram import Update
 from telegram.ext import CallbackContext, Filters
 
 from codenames.database import create_session_context
-from codenames.database.models import DuetPlayer
+from codenames.database.models import DuetPlayer, MAX_CLUE_LENGTH
 from codenames.handlers.special_types import LocalizedMessageHandler
 
 
-GIVE_CLUE_REGEX = r"^(?P<clue>\D+)\s+(?P<agent_count>\d+)$"
+GIVE_CLUE_REGEX = r"^(?P<clue>\D+)\s+(?P<agent_count>\d\d?)$"
 
 def give_clue(update: Update, context: CallbackContext) -> None:
     clue = " ".join(context.match["clue"].split()).upper()
-    agent_count = int(context.match["agent_count"])
+    if len(clue) > MAX_CLUE_LENGTH:
+        update.effective_chat.send_message(
+            context.language.tf.CLUE_TOO_LONG(MAX_CLUE_LENGTH)
+        )
+        return
+
+    clue += f' {int(context.match["agent_count"])}'
 
     with create_session_context() as session:
         player = session.query(DuetPlayer).get(update.effective_user.id)
@@ -21,7 +27,7 @@ def give_clue(update: Update, context: CallbackContext) -> None:
             if (len(game.team_listing(player.team.opposed())) == 0):
                 update.effective_user.send_message(context.language.t.NOT_GIVING_CLUE_WAIT_FOR_OTHER_TEAM)
 
-            elif game.give_clue(player.team):
+            elif game.give_clue(clue, player.team):
                 for other_player in game.players:
                     if other_player.id == player.id:
                         update.effective_user.send_message(
@@ -32,8 +38,7 @@ def give_clue(update: Update, context: CallbackContext) -> None:
                             other_player.id,
                             other_player.language.tf.PLAYER_GIVES_CLUE(
                                 nickname=player.nickname,
-                                clue=clue,
-                                agent_count=agent_count
+                                clue=clue
                             )
                         )
             else:

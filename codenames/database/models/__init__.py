@@ -1,6 +1,6 @@
 from typing import List
 
-from sqlalchemy import Column, Integer, SmallInteger, Enum, String, ForeignKey
+from sqlalchemy import Column, Integer, SmallInteger, Enum, String, Text, ForeignKey
 from sqlalchemy.orm import relationship, validates
 from sqlalchemy_utils import UUIDType, force_instant_defaults
 
@@ -14,6 +14,7 @@ from codenames.database.models.base_model import BaseModel, ColumnArray
 
 MAX_NICKNAME_LENGTH = 32
 MAX_WORD_LENGTH = 22
+MAX_CLUE_LENGTH = 40
 
 
 class User(BaseModel):
@@ -63,6 +64,8 @@ class DuetGame(duet.GameMixin, BaseModel):
 
     words = ColumnArray("word", duet.BOARD_SIZE, String(MAX_WORD_LENGTH))
     identity_pairs = ColumnArray("identity_pair", duet.BOARD_SIZE, Enum(duet.IdentityPair))
+    clues = ColumnArray("clue", duet.MAX_CLUE_COUNT, Text)
+    clue_teams = ColumnArray("clue_team", duet.MAX_CLUE_COUNT, Enum(duet.Team))
     guess_positions = ColumnArray("guess_position", duet.MAX_GUESS_COUNT, SmallInteger)
     guess_teams = ColumnArray("guess_team", duet.MAX_GUESS_COUNT, Enum(duet.Team))
 
