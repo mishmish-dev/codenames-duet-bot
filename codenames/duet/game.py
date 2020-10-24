@@ -17,9 +17,12 @@ class Phase(Enum):
 
 
 class GameMixin(BoardMixin):
-    def give_clue(self, team: Team) -> bool:
+    def give_clue(self, clue: str, team: Team) -> bool:
         if not (self.phase == Phase.CLUE and self.playing_team in (team, None)):
             return False
+
+        self.clues.append(clue)
+        self.clue_teams.append(team)
 
         self.phase = Phase.GUESS_CANNOT_SKIP
         self.playing_team = team.opposed()

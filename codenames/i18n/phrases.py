@@ -144,8 +144,8 @@ CLUE_ACCEPTED = {
 }
 
 PLAYER_GIVES_CLUE = {
-    RUSSIAN: "{nickname} даёт подсказку:\n{clue} {agent_count}.",
-    ENGLISH: "{nickname} gives a clue:\n{clue} {agent_count}."
+    RUSSIAN: "{nickname} даёт подсказку:\n{clue}.",
+    ENGLISH: "{nickname} gives a clue:\n{clue}."
 }
 
 NOT_YOUR_TURN_TO_GIVE_CLUE = {
@@ -158,6 +158,10 @@ NOT_GIVING_CLUE_WAIT_FOR_OTHER_TEAM = {
     ENGLISH: "There is no one on the other side yet. Clue not given."
 }
 
+CLUE_TOO_LONG = {
+    RUSSIAN: "Слишком длинная подсказка. Пожалуйста, пришлите подсказку длиной не более {} символов.",
+    ENGLISH: "The clue is too long. Please provide a clue that doesn't exceed {} characters."
+}
 
 ## make guess
 
@@ -217,6 +221,19 @@ TURN_ENDED = {
 PLAYER_ENDED_TURN = {
     RUSSIAN: "{} завершает ход.",
     ENGLISH: "{} ended their turn."
+}
+
+
+## clue history
+
+CLUE_HISTORY = {
+    RUSSIAN: "История подсказок на данный момент:\n\n{}",
+    ENGLISH: "Clue history so far:\n\n{}"
+}
+
+CLUE_HISTORY_ITEM = {
+    RUSSIAN: "{team} :: {clue}",
+    ENGLISH: "{team} :: {clue}"
 }
 
 
