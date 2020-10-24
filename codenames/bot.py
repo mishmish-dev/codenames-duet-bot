@@ -9,10 +9,7 @@ from codenames.handlers import HANDLERS
 
 def get_updater(token: str) -> Updater:
 
-    updater = Updater(
-        token=token,
-        use_context=True
-    )
+    updater = Updater(token=token)
 
     for handler in HANDLERS:
         updater.dispatcher.add_handler(handler)
