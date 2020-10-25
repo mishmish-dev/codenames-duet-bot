@@ -1,23 +1,19 @@
-[![Build Status](https://travis-ci.com/cekc/codenames-tgbot.svg?branch=master)](https://travis-ci.com/cekc/codenames-tgbot)
+[![Build Status](https://travis-ci.com/cekc/codenames-duet-bot.svg?branch=master)](https://travis-ci.com/cekc/codenames-duet-bot)
 
-# codenames-tgbot
+# codenames-duet-bot
 
 ## Running the bot
 
-`python -m codenames.bot [options...]`
+The bot works with Python `3.9`.
 
-## Repository structure
+Command: `python -m codenames.bot [options...]`
 
-### [`codenames`](https://github.com/cekc/codenames-tgbot/tree/master/codenames)
+## Testing the bot
 
-Python package containing all the logic. Needs Python version `>=3.7`.
+Command: `python -m pytest tests`
 
-### [`tests`](https://github.com/cekc/codenames-tgbot/tree/master/tests)
-
-Tests for the package. To run: `python -m pytest tests`.
-
-The tests run automatically in [Travis CI](https://travis-ci.com/cekc/codenames-tgbot). See [config](https://github.com/cekc/codenames-tgbot/blob/master/.travis.yml).
+[The tests](https://github.com/cekc/codenames-duet-bot/tree/master/tests) run automatically in [Travis CI](https://travis-ci.com/cekc/codenames-duet-bot). See [config](https://github.com/cekc/codenames-duet-bot/blob/master/.travis.yml).
 
 ## Heroku deployment
 
-You have to enable Postgres database for your application and set `BOT_TOKEN` and `HEROKUAPP_NAME` config variables. See [`Procfile`](https://github.com/cekc/codenames-tgbot/blob/master/Procfile).
+You have to enable Postgres database for your application and set `BOT_TOKEN` and `HEROKUAPP_NAME` config variables. See [`Procfile`](https://github.com/cekc/codenames-duet-bot/blob/master/Procfile).
