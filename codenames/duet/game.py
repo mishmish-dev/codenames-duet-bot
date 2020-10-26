@@ -5,6 +5,7 @@ from typing import Optional
 from codenames.duet.basic import Identity, IdentityPair, Team
 from codenames.duet.board import BoardMixin, BOARD_SIZE, IDENTITY_PAIRS
 from codenames.resources import WORDLISTS
+from codenames.utils import AlphabeticComparisonSet
 
 
 class Phase(Enum):
@@ -86,7 +87,7 @@ class GameMixin(BoardMixin):
         self.free_token_count = self.total_token_count
 
         enough_many_words = sample(WORDLISTS[self.wordlist_code].wordlist, BOARD_SIZE * 2)
-        previous_words = set(self.words)
+        previous_words = AlphabeticComparisonSet(self.words)
         words = (word for word in enough_many_words if word not in previous_words)
         identity_pairs = sample(IDENTITY_PAIRS, BOARD_SIZE)
 
