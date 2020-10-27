@@ -196,8 +196,8 @@ SUDDEN_DEATH = {
 }
 
 ALL_AGENTS_FROM_ONE_TEAM_FOUND = {
-    RUSSIAN: "Ура! Все агенты с этой стороны открыты. Ход завершён.",
-    ENGLISH: "Hooray! All agents found for this side. End of turn."
+    RUSSIAN: "Ура! Все агенты с этой стороны открыты. Ваш ход завершён.",
+    ENGLISH: "Hooray! All agents found for this side. End of your turn."
 }
 
 NOT_YOUR_TURN_TO_MAKE_GUESS = {
