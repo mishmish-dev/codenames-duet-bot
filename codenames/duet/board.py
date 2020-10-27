@@ -35,6 +35,10 @@ class BoardMixin:
         for clue, team in zip(self.clues, self.clue_teams):
             yield clue, team
 
+    def clear_clue_history(self) -> None:
+        self.clues.clear()
+        self.clue_teams.clear()
+
     def clear_guess_history(self) -> None:
         self.guess_positions.clear()
         self.guess_teams.clear()

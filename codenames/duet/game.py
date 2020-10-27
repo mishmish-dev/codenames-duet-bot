@@ -83,6 +83,7 @@ class GameMixin(BoardMixin):
         return True
 
     def initialize_board(self) -> None:
+        self.clear_clue_history()
         self.clear_guess_history()
         self.free_token_count = self.total_token_count
 
