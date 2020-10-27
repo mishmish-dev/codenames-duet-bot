@@ -236,6 +236,11 @@ CLUE_HISTORY_ITEM = {
     ENGLISH: "{team} :: {clue}"
 }
 
+CLUE_HISTORY_EMPTY = {
+    RUSSIAN: "История подсказок пуста.",
+    ENGLISH: "Clue history is empty."
+}
+
 
 # settings
 

@@ -18,6 +18,8 @@ def clue_history(update: Update, context: CallbackContext) -> None:
 
             if clues != "":
                 update.effective_user.send_message(context.language.tf.CLUE_HISTORY(clues))
+            else:
+                update.effective_user.send_message(context.language.t.CLUE_HISTORY_EMPTY)
 
         else:
             update.effective_user.send_message(context.language.t.YOU_ARE_NOT_IN_GAME)
