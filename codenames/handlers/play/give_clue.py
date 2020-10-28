@@ -6,17 +6,17 @@ from codenames.database.models import DuetPlayer, MAX_CLUE_LENGTH
 from codenames.handlers.special_types import LocalizedMessageHandler
 
 
-GIVE_CLUE_REGEX = r"^(?P<clue>\D+)\s+(?P<agent_count>\d\d?)$"
+GIVE_CLUE_REGEX = r"^(?P<clue>\D+)\s+(?P<agent_count>\d+)$"
 
 def give_clue(update: Update, context: CallbackContext) -> None:
     clue = " ".join(context.match["clue"].split()).upper()
+    clue += f' {int(context.match["agent_count"])}'
+
     if len(clue) > MAX_CLUE_LENGTH:
         update.effective_chat.send_message(
             context.language.tf.CLUE_TOO_LONG(MAX_CLUE_LENGTH)
         )
         return
-
-    clue += f' {int(context.match["agent_count"])}'
 
     with create_session_context() as session:
         player = session.query(DuetPlayer).get(update.effective_user.id)
