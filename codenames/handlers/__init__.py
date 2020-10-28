@@ -1,7 +1,7 @@
 from codenames.handlers.manage_game import inline_query_handler, new_game_handler
 from codenames.handlers.manage_game import change_game_settings_handler, create_game_handler
 from codenames.handlers.manage_game import join_game_handler, leave_game_handler
-from codenames.handlers.manage_game import invite_handler, replay_handler
+from codenames.handlers.manage_game import invite_handler, replay_handler, ping_handler
 
 from codenames.handlers.play import give_clue_handler, make_guess_handler, end_turn_handler, clue_history_handler
 
@@ -20,6 +20,7 @@ HANDLERS = [
     join_game_handler,
     invite_handler,
     replay_handler,
+    ping_handler,
     leave_game_handler,
 
     settings_handler,

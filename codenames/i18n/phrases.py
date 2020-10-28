@@ -128,9 +128,54 @@ INVITATION = {
 }
 
 
+## replay
+
 REPLAY = {
     RUSSIAN: "{} начинает игру заново.",
     ENGLISH: "{} starts the game over."
+}
+
+
+## ping
+
+USERNAME_REMINDS = {
+    RUSSIAN: "{} напоминает:",
+    ENGLISH: "{} reminds:"
+}
+
+REMINDER_SENT = {
+    RUSSIAN: "Напоминание отправлено.",
+    ENGLISH: "Reminder sent."
+}
+
+ANYONE_CAN_GIVE_CLUE = {
+    RUSSIAN: "Сейчас любой игрок может дать дать подсказку.",
+    ENGLISH: "Any player can give clue now."
+}
+
+YOU_NOW_GIVE_CLUE = {
+    RUSSIAN: "Вы сейчас даёте подсказку.",
+    ENGLISH: "You now give clue."
+}
+
+YOU_NOW_MAKE_GUESS_CANNOT_SKIP = {
+    RUSSIAN: "Вы сейчас отгадываете агента (закончить ход нельзя).",
+    ENGLISH: "You now make guess (you can't end turn now)."
+}
+
+YOU_NOW_MAKE_GUESS = {
+    RUSSIAN: "Вы сейчас отгадываете агента.",
+    ENGLISH: "You now make guess."
+}
+
+ALL_MAKE_GUESS_SUDDEN_DEATH = {
+    RUSSIAN: "Запас ходов исчерпан. Сейчас все игроки вне очереди открывают оставшихся агентов.",
+    ENGLISH: "Ran out of time. Now all players are guessing their remained agents."
+}
+
+GAME_IS_OVER_REPLAY = {
+    RUSSIAN: "Партия окончена. Как насчёт /replay ?",
+    ENGLISH: "Game is over. /replay ?"
 }
 
 
