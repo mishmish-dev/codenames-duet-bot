@@ -54,7 +54,7 @@ class GameMixin(BoardMixin):
             elif self.phase in (Phase.GUESS_CANNOT_SKIP, Phase.GUESS) and self.all_agents_found(team):
                 self.end_turn(team, force=True)
 
-            else:
+            elif self.phase != Phase.SUDDEN_DEATH:
                 self.phase = Phase.GUESS
 
         elif identity == Identity.BYSTANDER:
