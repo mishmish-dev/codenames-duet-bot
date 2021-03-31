@@ -1,4 +1,4 @@
-pillow==8.0.1
+pillow==8.1.1
 psycopg2-binary==2.8.6
 pytest==6.1.1
 python-telegram-bot==13.0
