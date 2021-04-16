@@ -6,6 +6,7 @@ from codenames.utils import StringEnum
 class _Language(StringEnum):
     ENGLISH = "en"
     RUSSIAN = "ru"
+    PERSIAN = "fa"
 
     def conjunct(self, items: Iterable, nothing: str) -> str:
         items = [str(item) for item in items]
