@@ -21,5 +21,7 @@ WORDLISTS: List[NamedWordlist] = [
 
     NamedWordlist("🇬🇧 orig.", load_wordlist("resources/wordlists/en/original.txt")),
     NamedWordlist("🇬🇧 Duet", load_wordlist("resources/wordlists/en/duet.txt")),
-    NamedWordlist("🇬🇧 18+", load_wordlist("resources/wordlists/en/deep_undercover.txt"))
+    NamedWordlist("🇬🇧 18+", load_wordlist("resources/wordlists/en/deep_undercover.txt")),
+
+    NamedWordlist("🇮🇷 فارسی", load_wordlist("resources/wordlists/fa/persian_words.txt"))
 ]
