@@ -358,6 +358,7 @@ CURRENT_SETTINGS = {
         "تنظیمات کنونی:\n"
         "- نام مستعار در بازی: {nickname} ..:: /nickname, برای تغییر\n" 
         "-زبان: {language} ..:: /language ، برای تغییر"
+    )
 }
 
 NICKNAME_DEFAULT_SETTING = {
