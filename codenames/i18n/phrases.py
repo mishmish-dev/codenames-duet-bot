@@ -1,4 +1,5 @@
 from codenames.i18n.language import _Language
+
 RUSSIAN = _Language.RUSSIAN
 ENGLISH = _Language.ENGLISH
 PERSIAN = _Language.PERSIAN
@@ -149,6 +150,7 @@ INVITATION = {
         " شما می‌توانید این پیام را فوروارد کنید یا اینکه لینک دکمه را به اشتراک بگذارید.\n\n"
         "Currently, the first table side is taken by {first_team}, while "
         "the second side is {second_team}."
+    )
 }
 
 
