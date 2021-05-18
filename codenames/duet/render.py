@@ -1,10 +1,12 @@
 from io import BytesIO
 from typing import DefaultDict, List, Set, Tuple
 
+from arabic_reshaper import reshape as reshape_rtl_text
+from bidi.algorithm import get_display as bidi_display
 from PIL import Image, ImageDraw
 
 from codenames.duet.game import GameMixin, Team, Identity, BOARD_SIZE
-from codenames.resources.fonts import FontList, PT_SANS, DEJA_VU_SANS
+from codenames.resources.fonts import FontList, PT_SANS, FARSI_WEB_TERAFIK
 from codenames.resources.images import BOARD, ASSASSIN, CHECKMARK_TOKEN
 from codenames.resources.images import ASSASSIN_MARK, DUET_AGENT_MARK
 from codenames.resources.images import DUET_AGENT_CARDS, BYSTANDER_TOKENS
@@ -33,13 +35,17 @@ def render_board(board: GameMixin, for_team: Team) -> BytesIO:
     board_image = BOARD.copy()
     draw = ImageDraw.Draw(board_image)
 
-    face = PT_SANS if board.wordlist_code in range(6) else DEJA_VU_SANS
+    is_farsi = bool(board.wordlist_code == 6)
+    face = FARSI_WEB_TERAFIK if is_farsi else PT_SANS
 
     for pos in range(BOARD_SIZE):
+        raw_text = board.words[pos].upper()
+        text = bidi_display(reshape_rtl_text(raw_text))
+
         draw_text_centered(
             draw,
             (116 + hor_shift(pos), 104 + vert_shift(pos)),
-            board.words[pos].upper(),
+            text,
             face
         )
 

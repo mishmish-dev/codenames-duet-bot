@@ -12,7 +12,7 @@ PT_SANS: FontList = [
 ]
 
 
-DEJA_VU_SANS: FontList = [
-    ImageFont.truetype("resources/DejaVuSans-Bold.ttf", size)
+FARSI_WEB_TERAFIK: FontList = [
+    ImageFont.truetype("resources/FarsiWebTerafikBold.ttf", size)
     for size in range(25, 11, -1)
 ]
