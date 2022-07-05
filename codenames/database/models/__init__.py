@@ -1,6 +1,6 @@
 from typing import List
 
-from sqlalchemy import Column, Integer, SmallInteger, Enum, String, Text, ForeignKey
+from sqlalchemy import BigInteger, Column, SmallInteger, Enum, String, Text, ForeignKey
 from sqlalchemy.orm import relationship, validates
 from sqlalchemy_utils import UUIDType, force_instant_defaults
 
@@ -18,7 +18,7 @@ MAX_CLUE_LENGTH = 40
 
 
 class User(BaseModel):
-    id = Column(Integer, primary_key=True)
+    id = Column(BigInteger, primary_key=True)
     language = Column(Enum(Language), nullable=False, default=DEFAULT_LANGUAGE)
     nickname = Column(String(MAX_NICKNAME_LENGTH))
 
@@ -33,7 +33,7 @@ force_instant_defaults(User)
 
 
 class DuetPlayer(BaseModel):
-    id = Column(Integer, ForeignKey("users.id"), primary_key=True)
+    id = Column(BigInteger, ForeignKey("users.id"), primary_key=True)
     nickname = Column(String(MAX_NICKNAME_LENGTH), nullable=False)
     game_id = Column(UUIDType, ForeignKey("duet_games.id"), nullable=False)
     team = Column(Enum(duet.Team), nullable=False)
