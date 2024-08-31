@@ -39,7 +39,7 @@ class Payload:
             return None
 
     def __str__(self) -> str:
-        return f"{self.PREFIX}_{self.language}_{self.dump_args()}"
+        return f"{self.PREFIX}_{self.language.value}_{self.dump_args()}"
 
 
 class ChangeLanguagePayload(Payload):

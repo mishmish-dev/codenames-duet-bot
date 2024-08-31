@@ -1,8 +1,8 @@
-arabic-reshaper
-pillow
-psycopg2-binary
-pytest
-python-bidi
-python-telegram-bot~=13.0
-sqlalchemy
-sqlalchemy-utils
+arabic-reshaper==3.0.0
+pillow==9.5.0
+psycopg2-binary==2.9.9
+pytest==8.3.2
+python-bidi==0.6.0
+python-telegram-bot==13.15
+sqlalchemy==2.0.32
+sqlalchemy-utils==0.41.2
