@@ -1,9 +1,8 @@
+from enum import StrEnum
 from typing import Iterable
 
-from codenames.utils import StringEnum
 
-
-class _Language(StringEnum):
+class _Language(StrEnum):
     ENGLISH = "en"
     RUSSIAN = "ru"
     PERSIAN = "fa"

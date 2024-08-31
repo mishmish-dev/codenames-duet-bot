@@ -4,7 +4,7 @@ from typing import Callable, TypeVar
 
 from codenames.utils.alphabetic_comparison import AlphabeticComparisonMap
 from codenames.utils.alphabetic_comparison import AlphabeticComparisonSet
-from codenames.utils.enum import StringEnum, enum_product, enum_exponent
+from codenames.utils.enum import enum_product, enum_exponent
 
 
 _T = TypeVar("_T")

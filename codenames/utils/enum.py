@@ -2,10 +2,6 @@ from enum import Enum, EnumMeta
 from itertools import product
 
 
-class StringEnum(str, Enum):
-    pass
-
-
 def enum_product(name: str, *enums: EnumMeta, separator="_", **kwargs) -> EnumMeta:
     return Enum(
         name,
