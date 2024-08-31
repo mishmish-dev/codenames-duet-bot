@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--token", required=True, help="Telegram Bot token")
     parser.add_argument("--db", required=True, help="database connection string")
-    parser.add_argument("--debug", action="store_true", help="Debug mode")
+    parser.add_argument("--debug", type=bool, default=False, help="Debug mode")
     parser.add_argument("--webhook-url", help="webhook URL")
     parser.add_argument("--listen-address", help="webhook server listen address")
     parser.add_argument("--listen-port", type=int, help="webhook server listen port")
