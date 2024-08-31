@@ -35,7 +35,6 @@ def webhook(*,
         url_path=token,
         webhook_url=webhook_url,
     )
-    updater.bot.set_webhook(webhook_url)
 
     updater.idle()
 
