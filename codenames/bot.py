@@ -32,7 +32,8 @@ def webhook(*,
     updater.start_webhook(
         listen=listen_address,
         port=listen_port,
-        url_path=token
+        url_path=token,
+        webhook_url=webhook_url,
     )
     updater.bot.set_webhook(webhook_url)
 
